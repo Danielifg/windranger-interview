@@ -1,7 +1,7 @@
-import {SignerWithAddress} from '@nomiclabs/hardhat-ethers/signers'
-import {ethers, upgrades} from 'hardhat'
-import {expect} from 'chai'
-import {ContractReceipt, ContractTransaction} from 'ethers'
+import {SignerWithAddress} from "@nomiclabs/hardhat-ethers/signers"
+import {ethers, upgrades} from "hardhat"
+import {expect} from "chai"
+import {ContractReceipt, ContractTransaction} from "ethers"
 
 interface DeployableContract<T> {
     deployed(): Promise<T>
@@ -35,7 +35,7 @@ export async function deployContractWithProxy<T extends DeployableContract<T>>(
     const factory = await ethers.getContractFactory(name)
     const contract = <T>(
         (<unknown>(
-            await upgrades.deployProxy(factory, [...args], {kind: 'uups'})
+            await upgrades.deployProxy(factory, [...args], {kind: "uups"})
         ))
     )
 

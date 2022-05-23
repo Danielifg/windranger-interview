@@ -1,5 +1,5 @@
-import {BaseContract, Contract, Event} from 'ethers'
-import {expect} from 'chai'
+import {BaseContract, Contract, Event} from "ethers"
+import {expect} from "chai"
 
 /**
  * Converts the unvalidated event, into a typed version, verifying the shape.
@@ -41,7 +41,7 @@ function captureEvents(
     contract.on(eventName, (...args: Array<unknown>) => {
         expect(
             args.length,
-            'The event details are missing'
+            "The event details are missing"
         ).is.greaterThanOrEqual(1)
 
         /*
@@ -51,7 +51,7 @@ function captureEvents(
         const lastEntry = args.length - 1
         const event = args[lastEntry] as Event
 
-        expect(event.blockNumber, 'The event should have a block number').is.not
+        expect(event.blockNumber, "The event should have a block number").is.not
             .undefined
 
         react(event)

@@ -1,8 +1,8 @@
-import '@typechain/hardhat'
-import '@nomiclabs/hardhat-ethers'
-import '@nomiclabs/hardhat-etherscan'
-import '@nomiclabs/hardhat-waffle'
-import '@openzeppelin/hardhat-upgrades'
+import "@typechain/hardhat"
+import "@nomiclabs/hardhat-ethers"
+import "@nomiclabs/hardhat-etherscan"
+import "@nomiclabs/hardhat-waffle"
+import "@openzeppelin/hardhat-upgrades"
 
 /*
  * You need to export an object to set up your config
@@ -18,7 +18,7 @@ export default {
             loggingEnabled: false
         },
         local: {
-            url: 'http://localhost:8545',
+            url: "http://localhost:8545",
             chainId: 33133,
             allowUnlimitedContractSize: true,
             loggingEnabled: true
@@ -27,7 +27,7 @@ export default {
     solidity: {
         compilers: [
             {
-                version: '0.7.6',
+                version: "0.7.6",
                 settings: {
                     optimizer: {
                         enabled: true,
@@ -36,7 +36,7 @@ export default {
                 }
             },
             {
-                version: '0.8.4',
+                version: "0.8.4",
                 settings: {
                     optimizer: {
                         enabled: true,
@@ -47,6 +47,6 @@ export default {
         ]
     },
     etherscan: {
-        apiKey: ''
+        apiKey: ""
     }
 }

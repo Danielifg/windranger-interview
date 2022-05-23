@@ -1,10 +1,9 @@
-import {ethers,run,upgrades} from 'hardhat';
+import {ethers, run, upgrades} from "hardhat"
 
-async function main(){
-    const signers = await ethers.getSigners();
-
+async function main() {
+    const signers = await ethers.getSigners()
 }
 
 main()
-.then(process.exit(0))
-.catch(err=>console.log(err))
+    .then(process.exit(0))
+    .catch((err) => console.log(err))

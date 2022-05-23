@@ -1,6 +1,6 @@
-import {expect} from 'chai'
-import {ContractTransaction} from 'ethers'
-import {ContractReceipt} from '@ethersproject/contracts/src.ts/index'
+import {expect} from "chai"
+import {ContractTransaction} from "ethers"
+import {ContractReceipt} from "@ethersproject/contracts/src.ts/index"
 
 // Transaction status code https://eips.ethereum.org/EIPS/eip-1066
 const SUCCESS = 1
