@@ -15,10 +15,7 @@ import {
     verifyWithdrawEvent,
     verifySetRewardTokenFundsEvent
 } from "./contract/verify-staking-events"
-import {event, events} from "./framework/events"
 import {deployContract, deployContractWithProxy} from "./framework/contracts"
-import {EventListener} from "./framework/event-listener"
-import {occurrenceAtMost} from "./framework/time"
 import {BigNumber as BN} from "ethers"
 
 // Wires up Waffle with Chai
@@ -29,13 +26,13 @@ describe("Staking", () => {
         // Deploy Mock reward Token
         this.rewardToken = await deployContract<ERC20Mock>("ERC20Mock")
         const signers = await ethers.getSigners()
-        this.admin = signers[0]
-        this.user1 = signers[1]
+        this.admin = <SignerWithAddress> signers[0]
+        this.user1 = <SignerWithAddress> signers[1]
     })
 
     beforeEach(async function () {
         this.provider = await ethers.getDefaultProvider()
-        const blockNumber: any = await this.provider.getBlockNumber()
+        const blockNumber: Number = await this.provider.getBlockNumber()
         this.lockUpStartTime = (
             await this.provider.getBlock(blockNumber)
         ).timestamp
