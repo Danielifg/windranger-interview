@@ -2,7 +2,7 @@
 import "hardhat"
 import "@nomiclabs/hardhat-ethers"
 // End - Support direct Mocha run & debug
-import {ethers, waffle} from "hardhat"
+import {ethers} from "hardhat"
 require("dotenv").config({path: "../.env"})
 import chai, {expect} from "chai"
 
@@ -15,7 +15,7 @@ import {
     verifyWithdrawEvent,
     verifySetRewardTokenFundsEvent
 } from "./contract/verify-staking-events"
-import {deployContract, deployContractWithProxy} from "./framework/contracts"
+import {deployContract} from "./framework/contracts"
 import {BigNumber as BN} from "ethers"
 
 // Wires up Waffle with Chai
